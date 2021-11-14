@@ -1,1 +1,3 @@
 # e-Commerce-Template
+
+More info coming soon...
