@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* give everything inherit for box sizing, and set the body to border-box */
+  /* this makes it easier to change box-sizing properties for other things
+  if the situation ever arises */
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /* Setting the base font size to 62.5%
+    this is 62.5% of the browsers default font size - 16px
+    thus making our base font size 10px and making it easy to use rem for all children measurements
+    This is a good practice to do incase users change the default font size. Very flexible */
+}
+
+body {
+  /* Set all fonts in the body */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+.app {
+  text-align: center;
+}
