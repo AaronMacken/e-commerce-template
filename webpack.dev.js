@@ -21,7 +21,9 @@ module.exports = merge(common, {
           {
             loader: "css-loader", // 2. turn scss into JS string (Common JS)
             options: {
-              modules: true,
+              modules: {
+                localIdentName: "[local]--[hash:base64:5]",
+              },
             },
           },
           "sass-loader", // 1. load SCSS | turn into CSS
