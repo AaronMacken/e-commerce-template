@@ -10,6 +10,11 @@ class UiStore {
   }
 
   @observable testBoolean = false;
+
+//   @action setTestBoolean(booleanValue) {
+//       this.testBoolean = booleanValue
+//   }
+
 }
 
 export default UiStore;
