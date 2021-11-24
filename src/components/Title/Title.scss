@@ -1,0 +1,15 @@
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.title, .subtitle {
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.subtitle {
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #7d8285;
+}
