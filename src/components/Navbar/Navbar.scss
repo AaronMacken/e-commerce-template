@@ -1,0 +1,37 @@
+/* ---------- Navbar Styling ----------- */
+.navbar {
+  margin: 0 auto;
+  padding: 0;
+  font-size: 1.25rem;
+}
+
+/* ---------- Navbar children styles ----------- */
+.navbarBrand {
+  margin-bottom: 0;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.item {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #333;
+  font-weight: 400;
+  margin: 0 1rem -2px 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.item:hover {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .navItem {
+    margin-bottom: 1.25rem;
+  }
+}

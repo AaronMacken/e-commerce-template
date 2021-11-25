@@ -15,8 +15,8 @@ class MainRouter extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/products" component={ProductsPage} />
-          <Route path="/data/:id" render={(props) => <DynamicPage derp="derp" {...props} />} />
+          <Route exact path="/products" component={ProductsPage} />
+          <Route path="/products/:id" render={(props) => <DynamicPage derp="derp" {...props} />} />
           <Route path="*">
             <Redirect to="/" />
           </Route>

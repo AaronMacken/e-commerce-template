@@ -19,7 +19,7 @@ export default class Product extends Component {
 
     return (
       <div>
-        <h1 className={styles.title}>Sample home page</h1>
+        <h1 className={styles.title}>Products Page</h1>
         <img className={styles.sampleImg} src={pngImage} />
         <img className={styles.sampleImg} src={jpgImage} />
         <img className={styles.sampleImg} src={svgImage} />
