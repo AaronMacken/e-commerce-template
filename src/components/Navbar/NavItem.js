@@ -1,32 +1,36 @@
 import React, { useState, useEffect } from "react";
-
+import rootStore from "data/stores";
 import styles from "./Navbar.scss";
 
-const NavItem = (props) => {
-  const [isDesktop, setIsDesktop] = useState(false);
+class NavItem extends React.Component {
+    constructor(props) {
+        super(props);
 
-  useEffect(() => {
-    resizeCallback();
-    window.addEventListener("resize", resizeCallback);
+        Object.assign(this, { rootStore });
+    }
 
-    return () => {
-      window.addEventListener("resize", resizeCallback);
-    };
-  }, []);
+    componentDidMount() { 
+        const { uiStore } = this.rootStore;
+         uiStore.setIsDesktop();
+         window.addEventListener("resize", uiStore.setIsDesktop)
+        }
 
-  const resizeCallback = () => {
-    setIsDesktop(window.innerWidth > 991);
-  };
+    componentWillUnmount() { 
+        const { uiStore } = this.rootStore;
+         uiStore.setIsDesktop();
+         window.removeEventListener("resize", uiStore.setIsDesktop)
+        }
 
-  if (isDesktop) {
-    return <li className={styles.navItem}>{props.children}</li>;
-  }
-
-  return (
-    <li className={styles.navItem} data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      {props.children}
-    </li>
-  );
-};
+    render() {
+        if (this.rootStore.uiStore.isDesktop) {
+            return <li className={styles.navItem}>{this.props.children}</li>;
+        }
+        return (
+            <li className={styles.navItem} data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                {this.props.children}
+            </li>
+        )    
+    }
+}
 
 export default NavItem;

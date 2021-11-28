@@ -10,6 +10,12 @@ class UiStore {
   }
 
   @observable testBoolean = false;
+  @observable isDesktop = false;
+
+  @action setIsDesktop() {
+    this.isDesktop = window.innerWidth > 991
+  } 
+  
 
 //   @action setTestBoolean(booleanValue) {
 //       this.testBoolean = booleanValue
